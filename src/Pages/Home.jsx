@@ -1,3 +1,5 @@
+import CategoryMain from "../components/CategoryMain/CategoryMain"
+import OurProductions from "../components/OurProductions/OurProductions"
 export default function Home() {
     return (
         <main>
@@ -17,25 +19,8 @@ export default function Home() {
                 <img className="headerIntroImageOne" src="/img/Intropribor1.png"/>
                 <img className="headerIntroImageTwo" src="/img/Intropribor2.png"/>
             </section>
-            <section className="ourProductions">
-                <div className="container">
-                    <div className="ourProductionsTitle">
-                        <h1>Товары нашего производства</h1>
-                        <div className="ourProductionsButtons">
-                            <div>
-                            <svg width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M25.5 8L0.916666 8M0.916666 8L8.83333 1.33333M0.916666 8L8.83333 15.5" stroke="#33363F"/>
-                            </svg>
-                            </div>
-                            <div>
-                            <svg width="26" height="16" viewBox="0 0 26 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0.5 8.83331L25.0833 8.83331M25.0833 8.83331L17.1667 15.5M25.0833 8.83331L17.1667 1.33331" stroke="#33363F"/>
-                            </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <OurProductions />
+            <CategoryMain />
         </main>
     )
 }

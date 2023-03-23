@@ -1,0 +1,33 @@
+.categoryMain {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.categoryContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px;
+}
+
+.categoryBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 520px;
+    padding: 25px;
+    background: linear-gradient(100.97deg, rgba(221, 227, 233, 0.38) 6.53%, rgba(217, 217, 217, 0) 79.37%);
+
+    h1 {
+        font-family: 'Inter';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 26px;
+        text-transform: uppercase;
+        color: #33363F;
+    }
+
+    img {
+        position: relative;
+    }
+
+}
