@@ -1,0 +1,147 @@
+@import '../variables';
+
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+.headerTop {
+  padding: 10px 0px;
+}
+
+.headerButtom {
+  width: 100%;
+  background-color: #dde3e9;
+  padding: 13px 0;
+}
+
+.headerTopWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerButtomWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTopNav {
+  a {
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}
+
+.headerTopLink {
+  font-size: 14px;
+  font-weight: 500;
+  color: #898888;
+  text-decoration: none;
+}
+
+.headerTopLinkWp {
+  background-image: url('../../../public/img/whatsapp.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding: 5px 0px 5px 25px;
+}
+
+.headerButtomCatalog {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 12px 15px;
+  border-radius: 15px;
+  div {
+    width: 32px;
+    height: 30px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+    padding-right: 11px;
+    span {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: 0.25s ease-in-out;
+      background-color: $black;
+
+      &:nth-child(1) {
+        top: 0px;
+      }
+
+      &:nth-child(2) {
+        top: 13px;
+      }
+
+      &:nth-child(3) {
+        top: 25px;
+      }
+    }
+
+    span.active {
+      &:nth-child(1) {
+        top: 16px;
+        transform: rotate(131deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+
+      &:nth-child(3) {
+        top: 15px;
+        transform: rotate(226deg);
+      }
+    }
+  }
+}
+
+.headerButtomConnection {
+  a {
+    background-image: url('../../../public/img/phone.svg');
+    background-repeat: no-repeat;
+    padding-left: 20px;
+    background-position: left center;
+  }
+}
+
+.headerButtomSearch {
+  input {
+    min-width: 310px;
+    padding: 15px 10px 15px 20px;
+    background: #ffffff;
+    border: 1px solid #dde3e9;
+    border-radius: 5px;
+    background-image: url('../../../public/img/search.svg');
+    background-repeat: no-repeat;
+    background-position: 96% center;
+  }
+}
+
+.headerButtomUserBasket {
+  display: flex;
+  align-items: center;
+}
+
+.headerButtomUser,
+.headerButtomFavorites {
+  text-align: center;
+  margin-right: 35px;
+}
+
+.headerButtomBasket {
+  text-align: center;
+}

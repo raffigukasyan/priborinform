@@ -1,0 +1,112 @@
+@import "../../scss/variables";
+.ourProductions {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+
+.ourProductionsTitle {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    h1 {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 41px;
+    color: $black;
+    }
+
+    .ourProductionsButtons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-basis: 181px;
+        button {
+            padding: 16px 12px;
+            background-color: $background;
+            border-radius: 6px;
+            border: none;
+            box-shadow: 1px 2px 0px rgba(160, 175, 190, 0.112);
+            cursor: pointer;
+            transition: all .2s;
+            &:hover {
+                box-shadow: 0px 7px 5px 0px #010c2947;
+            }
+        }
+    }
+}
+
+.sliderContainer {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+}
+
+.ourProduct {
+    position: relative;
+    min-height: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: box-shadow .2s;
+
+    &:hover {
+        box-shadow: 0px 9px 13px 0px #c7bcbce3;
+    }
+
+    svg {
+        position: absolute;
+        right: 11px;
+    }
+
+    img {
+        margin-bottom: 23px;
+    }
+
+    p {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        color: #33363F;
+        margin-bottom: 40px;
+    }
+
+    .ourProductBottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            font-weight: 500;
+            font-size: 16px;
+            color: $black;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-basis: 130px;
+            padding: 10px 0px;
+            background-color: $background;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 16px;
+            color: $black;
+        }
+
+    }
+}
