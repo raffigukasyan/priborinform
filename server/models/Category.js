@@ -18,8 +18,6 @@ class Category {
     const category = await this.getOneCategory(title);
     if (category.subCat.length) {
       return category.subCat.find((subcat) => subcat.title === subTitle);
-    } else {
-      console.log('FALSEEEEEEE');
     }
   }
 }
