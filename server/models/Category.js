@@ -9,9 +9,18 @@ class Category {
     });
     return category[0];
   }
-
-  async getProduct(id) {
-    const product = await pool.query('');
+  async getOneCategory(title) {
+    const category = await this.getCategory();
+    const result = category.find((cat) => cat.title === title);
+    return result;
+  }
+  async getOneSubCategory(title, subTitle) {
+    const category = await this.getOneCategory(title);
+    if (category.subCat.length) {
+      return category.subCat.find((subcat) => subcat.title === subTitle);
+    } else {
+      console.log('FALSEEEEEEE');
+    }
   }
 }
 
