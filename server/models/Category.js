@@ -16,8 +16,10 @@ class Category {
   }
   async getOneSubCategory(title, subTitle) {
     const category = await this.getOneCategory(title);
-    if (category.subCat.length) {
+    if (category && category.subCat.length) {
       return category.subCat.find((subcat) => subcat.title === subTitle);
+    } else {
+      return false;
     }
   }
 }

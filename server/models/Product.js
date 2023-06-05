@@ -4,6 +4,7 @@ const CategoryModel = require('./Category');
 class Product {
   async getAll(title) {
     const category = await CategoryModel.getOneCategory(title);
+    if (!category) return false;
     const result = await pool.query(
       `SELECT categoryProduct.id, categoryProduct.id_cat, category.title AS categoryTitle, products.id AS prodId, products.title, products.description, products.image FROM categoryProduct INNER JOIN products ON products.id = categoryProduct.id_prod INNER JOIN category ON category.id = categoryProduct.id_cat WHERE categoryProduct.id_cat = ?;`,
       [category.id],
