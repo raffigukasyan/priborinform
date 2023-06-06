@@ -1,4 +1,5 @@
 import OurProductions from '../components/OurProductions/OurProductions';
+import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <main>
@@ -6,7 +7,7 @@ export default function Home() {
         <div className="container">
           <div>
             <h1>Аналитические и лабораторные оборудования</h1>
-            <a href="/catalog/Товары нашего производства">
+            <Link to="/catalog">
               Каталог
               <svg
                 width="31"
@@ -19,7 +20,7 @@ export default function Home() {
                   fill="#DDE3E9"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="line"></div>

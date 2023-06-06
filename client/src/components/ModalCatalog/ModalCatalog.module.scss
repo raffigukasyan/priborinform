@@ -18,6 +18,11 @@
 
 .modalContent {
   display: none;
+
+  a {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
 }
 
 .modalContent.active {
