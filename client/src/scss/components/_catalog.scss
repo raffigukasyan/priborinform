@@ -1,0 +1,62 @@
+.catalog {
+  margin: 50px 0px;
+
+  h1 {
+    font-size: 35px;
+    color: $black;
+    margin-bottom: 50px;
+  }
+
+  .categoryWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+
+    .category {
+      padding: 25px 25px;
+      background-color: rgba(221, 227, 233, 0.34);
+      border-radius: 10px;
+
+      .categoryTop {
+        div {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+
+          span {
+            max-width: 550px;
+            color: $black;
+            font-size: 16px;
+            padding-right: 15px;
+          }
+          svg {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .categoryBottom {
+        min-height: 0px;
+        // position: relative;
+        ul {
+          position: absolute;
+          display: none;
+          li {
+            margin-bottom: 10px;
+          }
+        }
+        transition: all 0.5s;
+        ul.active {
+          display: block;
+        }
+      }
+
+      .categoryBottom.active {
+        min-height: 100px;
+      }
+    }
+  }
+}
