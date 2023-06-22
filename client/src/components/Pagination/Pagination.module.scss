@@ -1,0 +1,21 @@
+@import '../../scss/variables';
+
+.paginationWrapper {
+  display: flex;
+  align-items: center;
+
+  div {
+    min-width: 40px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid blue;
+    font-size: 16px;
+    color: $black;
+  }
+  div.active {
+    background-color: red;
+  }
+}

@@ -1,0 +1,15 @@
+@import '../variables';
+.Categorylinks {
+  padding: 50px 0px;
+
+  div {
+    font-size: 14px;
+  }
+}
+
+.productsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
