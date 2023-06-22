@@ -1,4 +1,5 @@
 import Admin from './Pages/Admin';
+import Auth from './Pages/Auth';
 import Basket from './Pages/Basket';
 import Catalog from './Pages/Catalog';
 import Device from './Pages/Device';
@@ -21,6 +22,17 @@ export const publicRoutes = [
     path: '/',
     Component: Home,
   },
+
+  {
+    path: '/login',
+    Component: Auth,
+  },
+
+  {
+    path: '/registration',
+    Component: Auth,
+  },
+
   {
     path: '/catalog',
     Component: Catalog,

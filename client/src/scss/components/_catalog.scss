@@ -1,3 +1,4 @@
+@import '../variables';
 .catalog {
   margin: 50px 0px;
 
@@ -22,9 +23,8 @@
         div {
           display: flex;
           align-items: center;
-          cursor: pointer;
 
-          span {
+          a {
             max-width: 550px;
             color: $black;
             font-size: 16px;
@@ -40,6 +40,7 @@
 
       .categoryBottom {
         min-height: 0px;
+        padding: 0px;
         // position: relative;
         ul {
           position: absolute;
@@ -55,7 +56,8 @@
       }
 
       .categoryBottom.active {
-        min-height: 100px;
+        min-height: 300px;
+        padding: 20px 0px;
       }
     }
   }

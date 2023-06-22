@@ -1,5 +1,3 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
 import './scss/app.scss';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/AppRouter';
@@ -9,16 +7,15 @@ import axios from 'axios';
 
 function App() {
   const [catalog, setCatalog] = useState([]);
+  const [device, setDevice] = useState([]);
 
   useEffect(() => {
     axios.get(`http://localhost:5000/catalog`).then((resp) => setCatalog(resp.data));
   }, []);
   return (
-    <AppContext.Provider value={{ catalog }}>
+    <AppContext.Provider value={{ catalog, device, setDevice }}>
       <BrowserRouter>
-        <Header />
         <AppRouter />
-        <Footer />
       </BrowserRouter>
     </AppContext.Provider>
   );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ModalCatalog from './ModalCatalog/ModalCatalog';
-
+import { Link } from 'react-router-dom';
 export default function Header() {
   const [modalCatalog, setModalCatalog] = useState(false);
   return (
@@ -64,47 +64,33 @@ export default function Header() {
             </div>
             <div className="headerButtomUserBasket">
               <div className="headerButtomUser">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 25 25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M20.5494 21.299C20.0746 19.9701 19.0284 18.7958 17.573 17.9582C16.1176 17.1206 14.3344 16.6667 12.5 16.6667C10.6655 16.6667 8.88235 17.1206 7.42698 17.9582C5.97161 18.7958 4.9254 19.9701 4.45061 21.299"
-                    stroke="#33363F"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                  <circle
-                    cx="12.5"
-                    cy="8.33332"
-                    r="4.16667"
-                    stroke="#33363F"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                  />
-                </svg>
-                <p>Личный кабинет</p>
-              </div>
-              <div className="headerButtomFavorites">
-                <svg
-                  width="30"
-                  height="30"
-                  viewBox="0 0 30 30"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M15 25L5.41425 15.0592C4.34865 13.9542 3.75 12.4554 3.75 10.8926C3.75 7.63819 6.29397 5 9.43211 5C10.9391 5 12.3844 5.62082 13.45 6.72589L15 8.33333L16.55 6.72589C17.6156 5.62082 19.0609 5 20.5679 5C23.706 5 26.25 7.63819 26.25 10.8926C26.25 12.4554 25.6514 13.9542 24.5857 15.0592L19.7929 20.0296"
-                    stroke="#33363F"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <p>Избранное</p>
+                <Link to="/login">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewBox="0 0 25 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M20.5494 21.299C20.0746 19.9701 19.0284 18.7958 17.573 17.9582C16.1176 17.1206 14.3344 16.6667 12.5 16.6667C10.6655 16.6667 8.88235 17.1206 7.42698 17.9582C5.97161 18.7958 4.9254 19.9701 4.45061 21.299"
+                      stroke="#33363F"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <circle
+                      cx="12.5"
+                      cy="8.33332"
+                      r="4.16667"
+                      stroke="#33363F"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                  <p>Личный кабинет</p>
+                </Link>
               </div>
               <div className="headerButtomBasket">
+                <div>0</div>
                 <svg
                   width="30"
                   height="30"

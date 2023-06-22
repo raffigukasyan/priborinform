@@ -5,7 +5,12 @@ class ProductController {
   async create(req, res) {}
 
   async getAll(req, res, next) {
-    const products = await ProductModel.getAll(req.params.title);
+    let { limit, page } = req.query;
+    page = page || 1;
+    limit = limit || 4;
+    let offset = page * limit - limit;
+
+    const products = await ProductModel.getAll(req.params.title, limit, offset);
     if (!products) {
       return next(ApiError.badRequest('Категория не существует'));
     }
@@ -13,7 +18,17 @@ class ProductController {
   }
 
   async getProductSubcat(req, res, next) {
-    const products = await ProductModel.getAllSubCat(req.params.title, req.params.subTitle);
+    let { limit, page } = req.query;
+    page = page || 1;
+    limit = limit || 4;
+    let offset = page * limit - limit;
+
+    const products = await ProductModel.getAllSubCat(
+      req.params.title,
+      req.params.subTitle,
+      limit,
+      offset,
+    );
     if (!products) return next(ApiError.badRequest('Подкатегория не существует'));
     return res.send(products);
   }
