@@ -2,8 +2,6 @@ const CategoryModel = require('../models/Category');
 const ProductModel = require('../models/Product');
 const ApiError = require('../error/ApiError');
 class ProductController {
-  async create(req, res) {}
-
   async getAll(req, res, next) {
     let { limit, page } = req.query;
     page = page || 1;

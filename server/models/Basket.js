@@ -18,7 +18,7 @@ class Basket {
 
   async addBasket(prodId, basketId) {
     const result = await pool.query(
-      `INSERT INTO basketProduct (id_prod, id_basket) VALUES (?, ?)`,
+      `INSERT INTO basketProduct (id_prod, id_basket) VALUES ('?', '?')`,
       [prodId, basketId],
     );
     return result[0];

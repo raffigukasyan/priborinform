@@ -8,7 +8,7 @@ import Pagination from '../components/Pagination/Pagination';
 import ProductCat from '../components/ProductCat/ProductCat';
 
 export default function Device({ match }) {
-  const { device, setDevice } = useContext(AppContext);
+  const { basket, setBasket, isAuth, user, device, setDevice } = useContext(AppContext);
   const limit = 4;
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
@@ -24,7 +24,6 @@ export default function Device({ match }) {
           },
         })
         .then((resp) => {
-          console.log(resp.data.rows);
           setDevice(resp.data.rows);
           setTotalCount(resp.data.count);
         });
@@ -37,6 +36,16 @@ export default function Device({ match }) {
   for (let i = 1; i <= pageCount; i++) {
     pages.push(i);
   }
+
+  const onAddBasket = (id) => {
+    if (!isAuth) {
+      alert('Не зарегистрированый');
+    } else {
+      axios.post('/basket/basketAdd', { prodId: id, basketId: user.basket }).then((data) => {
+        console.log(data);
+      });
+    }
+  };
 
   return (
     <>
@@ -55,7 +64,16 @@ export default function Device({ match }) {
               <div className="productsWrapper">
                 {console.log(device)}
                 {device.map((dev) => {
-                  return <ProductCat key={dev.id} img={dev.image} title={dev.title} />;
+                  return (
+                    <ProductCat
+                      key={dev.id}
+                      id={dev.id}
+                      description={dev.description}
+                      img={dev.image}
+                      title={dev.title}
+                      onAddBasket={onAddBasket}
+                    />
+                  );
                 })}
               </div>
             </div>

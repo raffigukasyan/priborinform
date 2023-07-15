@@ -1,10 +1,17 @@
 import styles from './ProductCat.module.scss';
-export default function ProductCat({ title, img }) {
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+export default function ProductCat({ id, title, img, description, onAddBasket }) {
   return (
-    <div className={styles.productCat}>
-      <img src={`/${img}`} alt="" />
-      <h1>{title}</h1>
-      <button>В Корзину</button>
-    </div>
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" height={'250px'} src={`/${img}`} />
+      <Card.Body>
+        <Card.Title>{title}</Card.Title>
+        <Card.Text>{description.slice(0, 100)} ...</Card.Text>
+        <Button variant="primary" onClick={() => onAddBasket(id)}>
+          Добавить в корзину
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }

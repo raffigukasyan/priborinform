@@ -8,7 +8,11 @@ class User {
   }
 
   async findOne(email) {
-    const result = await pool.query(`SELECT * FROM users WHERE email LIKE ?`, [email]);
+    const result = await pool.query(
+      `SELECT users.id, users.name, users.surname, users.phone, users.email, users.password, users.roles, basket.id AS basketId  FROM users INNER JOIN basket ON users.id = basket.id_user WHERE email LIKE ?
+    `,
+      [email],
+    );
     return result[0];
   }
 

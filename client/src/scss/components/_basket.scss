@@ -1,0 +1,12 @@
+.basket {
+  max-width: 1280px;
+  margin: auto;
+}
+.productWrapper {
+  max-width: 1200px;
+  justify-content: center;
+  display: grid;
+  grid-row-gap: 50px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 100px 0px;
+}

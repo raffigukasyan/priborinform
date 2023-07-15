@@ -47,6 +47,10 @@
           font-size: 15px;
         }
 
+        ::placeholder {
+          color: silver;
+        }
+
         span {
           color: red;
         }

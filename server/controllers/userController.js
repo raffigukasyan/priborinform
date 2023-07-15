@@ -4,10 +4,15 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const Basket = require('../models/Basket');
 
-const generateJwt = (userId, name, surname, phone, email, roles) => {
-  return jwt.sign({ id: userId, name, surname, phone, email, roles }, process.env.SECRET_KEY, {
-    expiresIn: '24h',
-  });
+const generateJwt = (userId, name, surname, phone, email, roles, basket) => {
+  console.log(basket);
+  return jwt.sign(
+    { id: userId, name, surname, phone, email, roles, basket },
+    process.env.SECRET_KEY,
+    {
+      expiresIn: '24h',
+    },
+  );
 };
 
 class UserController {
@@ -25,9 +30,18 @@ class UserController {
 
     const hashPassword = await bcrypt.hash(password, 5);
     const user = await User.createUser(name, surname, phone, email, hashPassword);
+    const basket = await Basket.create(user[0].insertId);
     const result = await User.findOne(email);
-    const basket = await Basket.create(result[0].id);
-    const token = generateJwt(result[0].id, name, surname, phone, email, result[0].roles);
+
+    const token = generateJwt(
+      result[0].id,
+      name,
+      surname,
+      phone,
+      email,
+      result[0].roles,
+      basket.insertId,
+    );
     return res.json({ token });
   }
 
@@ -45,6 +59,9 @@ class UserController {
     if (!comaprePassword) {
       return next(ApiError.internal('Указан неверный пароль'));
     }
+
+    console.log(user[0]);
+
     const token = generateJwt(
       user[0].id,
       user[0].name,
@@ -52,6 +69,7 @@ class UserController {
       user[0].phone,
       user[0].email,
       user[0].roles,
+      user[0].basketId,
     );
     return res.json({ token });
   }
@@ -64,6 +82,7 @@ class UserController {
       req.user.phone,
       req.user.email,
       req.user.roles,
+      req.user.basketId,
     );
     return res.json({ token });
   }

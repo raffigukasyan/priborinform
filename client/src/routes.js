@@ -5,15 +5,37 @@ import Catalog from './Pages/Catalog';
 import Device from './Pages/Device';
 import DevicePage from './Pages/DevicePage';
 import Home from './Pages/Home';
+import TableData from './components/TableData/TableData';
 
 export const authRoutes = [
+  {
+    path: '/basket',
+    Component: Basket,
+  },
+
   {
     path: '/admin',
     Component: Admin,
   },
+
   {
-    path: '/basket',
-    Component: Basket,
+    path: '/admin/category',
+    Component: TableData,
+  },
+
+  {
+    path: '/admin/products',
+    Component: TableData,
+  },
+
+  {
+    path: '/admin/users',
+    Component: TableData,
+  },
+
+  {
+    path: '/admin/orders',
+    Component: TableData,
   },
 ];
 

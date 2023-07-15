@@ -1,0 +1,68 @@
+.panel {
+  width: 100%;
+  display: flex;
+}
+
+.navPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 350px;
+  height: 100vh;
+  background: rgba(221, 227, 233, 0.31);
+  a {
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      padding: 15px 0px;
+      border-radius: 10px;
+      background: $background;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+      margin-bottom: 35px;
+    }
+  }
+}
+
+.panelControl {
+  padding-top: 30px;
+  display: grid;
+  width: 100%;
+  justify-content: center;
+  grid-gap: 100px;
+  grid-template-columns: 450px 450px;
+
+  .panelBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(221, 227, 233, 0.2);
+    height: 300px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      background: #dde3e9;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: $black;
+      font-size: 18px;
+    }
+  }
+}

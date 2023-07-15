@@ -1,6 +1,16 @@
 const pool = require('../db');
 
 class Category {
+  async getAll() {
+    const category = await pool.query('SELECT * FROM category');
+    return category[0];
+  }
+
+  async getSubCat() {
+    const subCat = await pool.query('SELECT * FROM subcategory');
+    return subCat[0];
+  }
+
   async getCategory() {
     const category = await pool.query('SELECT * FROM category');
     const subCategory = await pool.query('SELECT * FROM subcategory');
